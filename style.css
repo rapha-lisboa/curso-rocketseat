@@ -28,7 +28,8 @@
 
 body {
   /* background: color image repeat position /size */
-  background: var(--background-design) no-repeat top center /cover
+  background: var(--background-design) no-repeat top center /cover;
+  height: 100vh;
 }
 
 body * {
