@@ -37,7 +37,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
 
   /*empurra o maximo que pode pra direita e p esquerda, assim fica sempre responsivo no centro*/
   /*nao se aplica pro Y, so pro X*/
