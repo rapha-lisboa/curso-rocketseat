@@ -7,23 +7,21 @@
 :root{
   --text-color: white;
   --background-design: url(./images/background-dark.jpg);
-  --background-links: rgba(255, 255, 255, 0.1);
-  --border-links: rgba(255, 255, 255, 0.5);
-  --background-hover-links: rgba(255, 255, 255, 0.05);
-  --background-hover-icons: rgba(255, 255, 255, 0.2);
+  --background-links: rgb(255 255 255 / 0.1);
+  --border-links: rgb(255 255 255 / 0.5);
+  --background-hover-links: rgb(255 255 255 / 0.05);
+  --background-hover-icons: rgb(255 255 255 / 0.2);
   --switch: url(./images/moon-stars.svg);
-  --button-right-position: 50%;
 }
 
 .light-mode {
   --text-color: black;
   --background-design: url(./images/background-light.jpg);
-  --background-links: rgba(0, 0, 0, 0.1);
-  --border-links: rgba(0, 0, 0, 0.5);
-  --background-hover-links: rgba(0, 0, 0, 0.05);
-  --background-hover-icons: rgba(0, 0, 0, 0.2);
+  --background-links: rgb(0 0 0 / 0.1);
+  --border-links: rgb(0 0 0 / 0.5);
+  --background-hover-links: rgb(0 0 0 / 0.05);
+  --background-hover-icons: rgb(0 0 0 / 0.2);
   --switch: url(./images/sun.svg);
-  --button-right-position: 0;
 }
 
 body {
@@ -81,7 +79,17 @@ body * {
 
   transform: translateY(-50%);
   top: 50%;
-  right: var(--button-right-position);
+  right: 50%;
+
+  animation: slide-out 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--background-hover-icons);
+}
+
+.light-mode #switch button {
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -150,4 +158,24 @@ ul li a:hover{
 
 #social-links a:hover{
   background-color: var(--background-hover-icons);
+}
+
+@keyframes slide-in {
+  from {
+    right: 50%;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: 50%;
+  }
 }
